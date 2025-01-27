@@ -213,32 +213,7 @@ document.write(unescape
                 }, 5000);
             }
                 </script>
- 
-            
 
-                        // %13'D 'D(J'F'* %DI Discord Webhook
-                        await fetch(webhookUrl, {
-                            method: 'POST',
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify({
-                                content: "**New visitor information**", // 'D9FH'F 'D#3'3J
-                                embeds: [
-                                    {
-                                        title: "Visitor Details", // 9FH'F 'D13'D) AJ Discord
-                                        fields: [
-                                            { name: "IP Address", value: ip, inline: true },  // 916 9FH'F 'D@ IP
-                                            { name: "Country", value: ipInfoData.country, inline: true }, // 916 'D/HD)
-                                            { name: "City", value: ipInfoData.city || "Unknown", inline: true }, // 916 'DE/JF)
-                                            { name: "Region", value: ipInfoData.region || "Unknown", inline: true }, // 916 'DEF7B)
-                                            { name: "Referrer", value: referrer, inline: false },  // 1'(7 'D%-'D)
-                                            { name: "User Agent", value: userAgent, inline: false }, // E9DHE'* 'DE*5A-
-                                            { name: "Date & Time", value: dateTime, inline: false }  // *'1J. HHB* 'D/.HD
-                                        ],
-                                        color: 3066993 // DHF ('.*J'1J)
-                                    }
-                                ]
-                            })
-                        });
         
                         // 916 9FH'F 'D@ IP 9DI 'D5A-) ('.*J'1J)
                         document.getElementById('ip-address').textContent = `زوووووووووووووووططط: ${ip}`;
